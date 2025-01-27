@@ -14,23 +14,27 @@ const Index = () => {
         {/* Header */}
         <header className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
-            <img src="/lovable-uploads/a9438007-d198-40fc-9596-e1e47be76d76.png" alt="Witz Africa Logo" className="h-8" />
+            <img 
+              src="/lovable-uploads/a9438007-d198-40fc-9596-e1e47be76d76.png" 
+              alt="Witz Africa Logo" 
+              className="h-12" // Increased size
+            />
           </div>
           <div className="flex-1 mx-8">
-            <div className="relative">
+            <div className="relative max-w-xl mx-auto"> {/* Added max-width and centered */}
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <Input 
                 placeholder="I'm looking for..." 
-                className="w-full pl-10 bg-transparent border-gray-700"
+                className="w-full pl-10 bg-white text-gray-900 border-gray-200" // Changed background and text color
               />
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6"> {/* Increased gap */}
             <div className="relative">
-              <ShoppingCart className="h-6 w-6" />
+              <ShoppingCart className="h-5 w-5" /> {/* Slightly reduced size */}
               <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs px-2">25</span>
             </div>
-            <Avatar>
+            <Avatar className="h-8 w-8"> {/* Reduced size */}
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
@@ -43,11 +47,11 @@ const Index = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            <Card className="bg-zinc-900 border-gray-800">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-6">
+            <Card className="bg-zinc-900 border-gray-800 relative">
+              <Truck className="absolute top-4 right-4 h-8 w-8" />
+              <div className="p-6 pt-16"> {/* Increased top padding for icon space */}
+                <div className="flex items-center justify-center mb-6">
                   <h2 className="text-xl font-semibold">Track Your Order</h2>
-                  <Truck className="h-6 w-6" />
                 </div>
 
                 <Tabs defaultValue="to_be_delivered">
@@ -79,15 +83,17 @@ const Index = () => {
 
             {/* Recommendations Section */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-6">You May also like</h3>
-              <div className="grid grid-cols-5 gap-4">
-                {Array(10).fill(0).map((_, i) => (
-                  <ProductCard key={i} />
-                ))}
-              </div>
-              <div className="flex justify-center mt-6">
-                <Button variant="outline">SHOW MORE</Button>
-              </div>
+              <h3 className="text-xl font-semibold mb-4">You May also like</h3>
+              <Card className="p-6 bg-zinc-900 border-gray-800">
+                <div className="grid grid-cols-5 gap-4">
+                  {Array(10).fill(0).map((_, i) => (
+                    <ProductCard key={i} />
+                  ))}
+                </div>
+                <div className="flex justify-center mt-6">
+                  <Button variant="outline">SHOW MORE</Button>
+                </div>
+              </Card>
             </div>
           </div>
         </div>

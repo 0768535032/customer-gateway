@@ -1,20 +1,19 @@
-import { Home, CircleDollarSign, ShoppingBag, Eye, MessageCircle, MessagesSquare } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const menuItems = [
-  { icon: Home, label: "Dashboard" },
-  { icon: CircleDollarSign, label: "My Assets" },
-  { icon: ShoppingBag, label: "My Orders" },
-  { icon: Eye, label: "Recent Views" },
-  { icon: MessageCircle, label: "Message" },
-  { icon: MessagesSquare, label: "Chats with sellers" },
+  { label: "Dashboard" },
+  { label: "My Assets" },
+  { label: "My Orders" },
+  { label: "Recent Views" },
+  { label: "Message" },
+  { label: "Chats with sellers" },
 ];
 
 export const Sidebar = () => {
   return (
     <div className="w-64 flex flex-col">
       <div className="mb-8 flex flex-col items-center">
-        <Avatar className="h-20 w-20 mb-4">
+        <Avatar className="h-16 w-16 mb-4"> {/* Adjusted size */}
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>OS</AvatarFallback>
         </Avatar>
@@ -26,9 +25,8 @@ export const Sidebar = () => {
           <a
             key={index}
             href="#"
-            className="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-zinc-900 rounded-lg transition-colors"
+            className="px-4 py-3 text-gray-400 hover:text-white hover:bg-zinc-900 rounded-lg transition-colors block"
           >
-            <item.icon className="h-5 w-5" />
             <span>{item.label}</span>
           </a>
         ))}
