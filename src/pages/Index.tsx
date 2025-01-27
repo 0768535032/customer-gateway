@@ -17,24 +17,24 @@ const Index = () => {
             <img 
               src="/lovable-uploads/a9438007-d198-40fc-9596-e1e47be76d76.png" 
               alt="Witz Africa Logo" 
-              className="h-12" // Increased size
+              className="h-12"
             />
           </div>
           <div className="flex-1 mx-8">
-            <div className="relative max-w-xl mx-auto"> {/* Added max-width and centered */}
+            <div className="relative max-w-xl mx-auto">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <Input 
                 placeholder="I'm looking for..." 
-                className="w-full pl-10 bg-white text-gray-900 border-gray-200" // Changed background and text color
+                className="w-full pl-10 bg-white text-gray-900 border-gray-200"
               />
             </div>
           </div>
-          <div className="flex items-center gap-6"> {/* Increased gap */}
+          <div className="flex items-center gap-6">
             <div className="relative">
-              <ShoppingCart className="h-5 w-5" /> {/* Slightly reduced size */}
+              <ShoppingCart className="h-5 w-5" />
               <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs px-2">25</span>
             </div>
-            <Avatar className="h-8 w-8"> {/* Reduced size */}
+            <Avatar className="h-8 w-8">
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
@@ -47,13 +47,14 @@ const Index = () => {
 
           {/* Main Content */}
           <div className="flex-1">
-            <Card className="bg-zinc-900 border-gray-800 relative">
-              <Truck className="absolute top-4 right-4 h-8 w-8" />
-              <div className="p-6 pt-16"> {/* Increased top padding for icon space */}
-                <div className="flex items-center justify-center mb-6">
-                  <h2 className="text-xl font-semibold">Track Your Order</h2>
-                </div>
+            {/* Track Icon and Text outside the card */}
+            <div className="flex flex-col items-end mb-4">
+              <Truck className="h-8 w-8" />
+              <h2 className="text-xl font-semibold mt-2">Track Your Order</h2>
+            </div>
 
+            <Card className="bg-zinc-900 border-gray-800 relative">
+              <div className="p-6">
                 <Tabs defaultValue="to_be_delivered">
                   <TabsList className="w-full justify-start border-b border-gray-800 bg-transparent">
                     <TabsTrigger value="to_be_delivered">To be delivered</TabsTrigger>
